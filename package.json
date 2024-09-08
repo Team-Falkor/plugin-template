@@ -1,0 +1,16 @@
+{
+  "name": "plugin-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "esbuild": "^0.23.1"
+  },
+  "peerDependencies": {
+    "@team-falkor/sdk": "^0.1.3"
+  }
+}
