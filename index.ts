@@ -1,19 +1,25 @@
-import type {
-  PluginMetadata,
-  ProviderID,
-  ProviderInfoResponse,
-  ProviderPagination,
-  ProviderSearchResponse,
-  ProviderSourceRequest,
-  ProviderSourceResponse,
-  SearchQuery,
+import {
+  PluginContext,
+  PluginType,
+  type PluginMetadata,
+  type ProviderID,
+  type ProviderInfoResponse,
+  type ProviderPagination,
+  type ProviderSearchResponse,
+  type ProviderSourceRequest,
+  type ProviderSourceResponse,
+  type SearchQuery,
 } from "@team-falkor/sdk";
 
 const BaseProvider = window.FalkorSDK.BaseProvider;
-const PluginType = window.FalkorSDK.PluginType;
-const fetch = window.FalkorFetch;
 
 export default class PluginTemplate extends BaseProvider {
+  protected context: PluginContext | null = null;
+
+  setContext(context: PluginContext) {
+    this.context = context;
+  }
+
   metadata: PluginMetadata = {
     name: "Plugin Template",
     version: "1.0.0",

@@ -11,11 +11,17 @@ esbuild
     outfile: "dist/index.js", // Output file
     platform: "browser", // Target browser environment
     sourcemap: false, // Optional: Generate source maps for debugging
-    minify: false, // Optional: Minify the output for production
+    minify: true, // Optional: Minify the output for production
     target: ["chrome58", "firefox57", "safari11", "edge16"], // Browser compatibility targets
     define: {
       global: "window", // Define 'global' as 'window' for browser compatibility
     },
-    external: ["@team-falkor/sdk"],
+    external: [
+      "@team-falkor/sdk",
+      "cheerio",
+      "@tauri-apps/plugin-http",
+      "fuse.js",
+      "sonner",
+    ], // External dependencies
   })
   .catch(() => process.exit(1));
